@@ -2890,7 +2890,7 @@ static int smack_msg_msg_alloc_security(struct msg_msg *msg)
  *
  * Returns a pointer to the smack value
  */
-static struct smack_known *smack_of_shm(struct kern_ipc_perm *shp)
+static struct smack_known *smack_of_shm(struct kern_ipc_perm *isp)
 {
 	struct smack_known **blob = smack_ipc(isp);
 
@@ -2903,7 +2903,7 @@ static struct smack_known *smack_of_shm(struct kern_ipc_perm *shp)
  *
  * Returns 0
  */
-static int smack_shm_alloc_security(struct kern_ipc_perm *shp)
+static int smack_shm_alloc_security(struct kern_ipc_perm *isp)
 {
 	struct smack_known **blob = smack_ipc(isp);
 
